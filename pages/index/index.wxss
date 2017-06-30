@@ -73,6 +73,6 @@
 }
 
 .zan-card__left-col {
-  margin-right: 80px;
+  margin-right: 60px;
 }
 

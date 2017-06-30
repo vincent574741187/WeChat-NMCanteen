@@ -1,45 +1,48 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-    <view class="page__hd">
-        <view class="page__title">订餐需知</view>
-        <view class="page__desc">订餐是有时间限制的，早餐：前一天任何时间，午餐：当天上午8点至10点，晚餐：当天下午2点到4点。</view>
-    </view>
-    <view class="page__bd">
-        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+  <view class="page__hd">
+    <view class="page__title">订餐需知</view>
+    <view class="page__desc">订餐是有时间限制的，早餐：前一天任何时间，午餐：当天上午8点至10点，晚餐：当天下午2点到4点。</view>
+  </view>
+  <view class="page__bd">
 
-        <view class="weui-cells__title">订餐信息</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_select">
-                <view class="weui-cell__hd weui-cell__hd_in-select-after">
-                    <view class="weui-label">用餐类型</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
-                        <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
-                    </picker>
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">用餐日期</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <picker mode="date" value="{{date}}" start="{{date}}" end="2020-09-01" bindchange="bindDateChange">
-                        <view class="weui-input">{{date}}</view>
-                    </picker>
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">用餐人数</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入用餐人数"/>
-                </view>
-            </view>
-        </view>
+    <view class="weui-cells__title">订餐信息</view>
 
-        <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="showTopTips">确认订餐</button>
+    <form bindsubmit="formSubmit">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">用餐类型</view>
         </view>
+        <view class="weui-cell__bd">
+          <picker value="{{mealTypesIndex}}" range="{{mealTypes}}" name="mealType">
+            <view class="weui-select weui-select_in-select-after">{{mealTypes[mealTypesIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">用餐日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" value="{{date}}" start="{{date}}" end="2020-09-01" name="mealDate">
+            <view class="weui-input">{{date}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">用餐人数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="mealNums" placeholder="请输入用餐人数" />
+        </view>
+      </view>
     </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" formType="submit">确认订餐</button>
+    </view>
+
+    </form>
+  </view>
 </view>
