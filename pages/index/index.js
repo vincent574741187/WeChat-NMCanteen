@@ -1,4 +1,4 @@
-var base64 = require("../../resources/images/base64");
+
 Page({
   onLoad: function () {
     wx.request({
@@ -11,8 +11,6 @@ Page({
         console.log(res.data)
       }
     })
-    this.setData({
-      icon: base64.icon20
-    });
+
   }
 });
