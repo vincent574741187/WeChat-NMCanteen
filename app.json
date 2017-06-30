@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/order/confirm/confirm",
+    "pages/order/list/list"
+  ],
+  "window": {
+    "navigationBarTitleText": "南牧饭堂",
+    "backgroundTextStyle": "dark",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#479de6",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "resources/images/iconfont-home.png",
+        "selectedIconPath": "resources/images/iconfont-home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/confirm/confirm",
+        "iconPath": "resources/images/iconfont-list.png",
+        "selectedIconPath": "resources/images/iconfont-list-active.png",
+        "text": "订餐"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "resources/images/iconfont-user.png",
+        "selectedIconPath": "resources/images/iconfont-user-active.png",
+        "text": "我的"
+      }
+    ],
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
