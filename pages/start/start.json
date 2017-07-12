@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarBackgroundColor": "#FCFCFC",
+  "navigationBarTitleText": "欢迎您的到来",
+  "disableScroll": "true"
+}

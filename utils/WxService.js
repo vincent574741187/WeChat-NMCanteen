@@ -1,3 +1,4 @@
+import Tools from 'Tools'
 import es6 from '../plugins/es6-promise'
 
 class Service {
@@ -9,6 +10,7 @@ class Service {
      * __init
      */
     __init() {
+    	this.tools = new Tools
     	this.__initDefaults()
     	this.__initMethods()
     }
@@ -55,6 +57,37 @@ class Service {
 			})
 		}
 
+		/**
+		 * 保留当前页面，跳转到应用内的某个页面
+		 * @param {String} url  路径
+		 * @param {Object} params 参数
+		 */
+		this.navigateTo = (url, params) => {
+	        const $$url = this.tools.buildUrl(url, params)
+	    	return new es6.Promise((resolve, reject) => {
+	    		wx.navigateTo({
+	    			url: $$url,
+					success: res => resolve(res),
+		            fail: res => reject(res),
+				})
+	    	})
+	    }
+
+	    /**
+		 * 关闭当前页面，跳转到应用内的某个页面
+		 * @param {String} url  路径
+		 * @param {Object} params 参数
+		 */
+	    this.redirectTo = (url, params) => {
+	        const $$url = this.tools.buildUrl(url, params)
+	    	return new es6.Promise((resolve, reject) => {
+	    		wx.redirectTo({
+	    			url: $$url,
+					success: res => resolve(res),
+		            fail: res => reject(res),
+				})
+	    	})
+	    }
     }
 
     /**

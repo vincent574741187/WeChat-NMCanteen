@@ -1,0 +1,12 @@
+page{
+  height:100%;
+  width:100%;
+}
+.start {
+  height: 100%;
+  width:100%;
+}
+.start-image {
+  height: 100%;
+  width:100%;
+}

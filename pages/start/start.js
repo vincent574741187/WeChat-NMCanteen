@@ -1,15 +1,17 @@
-App({
-  onLaunch: function (options) {
-    // Do something initial when launch.
+const App = getApp()
+
+Page({
+  onLoad() { },
+  onShow() { },
+  bindload(e) {
+    setTimeout(App.WxService.getStorageSync('token') ? this.goIndex : this.goLogin, 3000)
   },
-  onShow: function (options) {
-    // Do something when show.
+  goIndex() {
+    App.WxService.switchTab({
+      url: '/pages/index/index'
+    })
   },
-  onHide: function () {
-    // Do something when hide.
+  goLogin() {
+    App.WxService.redirectTo('/pages/login/login')
   },
-  onError: function (msg) {
-    console.log(msg)
-  },
-  globalData: 'I am global data'
 })

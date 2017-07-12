@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/start/start",
+    "pages/login/login",
     "pages/index/index",
     "pages/user/user",
     "pages/order/confirm/confirm",
@@ -10,6 +12,7 @@
     "backgroundTextStyle": "dark",
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#f8f8f8",
+    "enablePullDownRefresh": true,
     "backgroundColor": "#f8f8f8"
   },
   "tabBar": {
